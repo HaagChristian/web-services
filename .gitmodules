@@ -7,3 +7,6 @@
 [submodule "WebServices-Frontend"]
 	path = WebServices-Frontend
 	url = https://github.com/xNeroXx/WebServices-Frontend.git
+[submodule "music-db"]
+	path = music-db
+	url = https://github.com/selinaweh/music-db.git
