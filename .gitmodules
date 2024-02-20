@@ -7,3 +7,6 @@
 [submodule "musicApp"]
 	path = musicApp
 	url = https://github.com/HaagChristian/musicApp.git
+[submodule "web-services-user-db"]
+	path = web-services-user-db
+	url = https://github.com/HaagChristian/web-services-user-db.git
