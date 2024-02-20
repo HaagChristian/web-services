@@ -1,30 +1,43 @@
 version: "3"
 services:
-  mysql:
-    container_name: mysql
+  mysql-user-db:
+    container_name: mysql-user-db
     platform: linux/x86_64
-    build: ./web-services-db/database/mysql/
+    build: ./web-services-user-db/database/mysql/
     ports:
       - "3306:3306"
     volumes:
-      - ./web-services-db/database/mysql/db:/docker-entrypoint-initdb.d
-      - ./web-services-db/database/mysql/conf.d:/etc/mysql/conf.d
+      - ./web-services-user-db/database/mysql/db:/docker-entrypoint-initdb.d
+      - ./web-services-user-db/database/mysql/conf.d:/etc/mysql/conf.d
     env_file:
-      - web-services-db/database/mysql/local.env
+      - web-services-user-db/database/mysql/local.env
     tty: true
-  fastapi-authentication:
+  mysql-music-db:
+    container_name: mysql-music-db
+    platform: linux/x86_64
+    build: ./music-db/database/mysql/
+    ports:
+      - "3308:3306"
+    volumes:
+      - ./music-db/database/mysql/db:/docker-entrypoint-initdb.d
+      - ./music-db/database/mysql/conf.d:/etc/mysql/conf.d
+    env_file:
+      - music-db/database/mysql/local.env
+    tty: true
+  music-app:
     depends_on:
-      - mysql
+      - mysql-user-db
+      - mysql-music-db
     container_name: fast_api
     platform: linux/x86_64
     build:
-      context: ./fastapi-authentication
+      context: ./musicApp
       dockerfile: Dockerfile
     restart: unless-stopped
     tty: true
     volumes:
-      - ./fastapi-authentication:/app
+      - ./musicApp:/app
     ports:
-      - 8000:8000
+      - "8000:8000"
     env_file:
-      - ./fastapi-authentication/local.env
+      - ./musicApp/local.env
