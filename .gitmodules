@@ -1,6 +1,3 @@
-[submodule "web-services-db"]
-	path = web-services-db
-	url = https://github.com/HaagChristian/web-services-db.git
 [submodule "WebServices-Frontend"]
 	path = WebServices-Frontend
 	url = https://github.com/xNeroXx/WebServices-Frontend.git
