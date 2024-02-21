@@ -7,3 +7,6 @@
 [submodule "backend/music-app"]
 	path = backend/music-app
 	url = https://github.com/HaagChristian/music-app.git
+[submodule "database/music-db"]
+	path = database/music-db
+	url = https://github.com/selinaweh/music-db.git
