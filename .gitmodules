@@ -10,3 +10,6 @@
 [submodule "web-services-user-db"]
 	path = web-services-user-db
 	url = https://github.com/HaagChristian/web-services-user-db.git
+[submodule "backend/id3-service"]
+	path = backend/id3-service
+	url = https://github.com/HaagChristian/id3-service.git
