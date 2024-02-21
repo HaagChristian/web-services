@@ -4,8 +4,8 @@
 [submodule "music-db"]
 	path = music-db
 	url = https://github.com/selinaweh/music-db.git
-[submodule "musicApp"]
-	path = musicApp
+[submodule "music-app"]
+	path = music-app
 	url = https://github.com/HaagChristian/musicApp.git
 [submodule "web-services-user-db"]
 	path = web-services-user-db
