@@ -2,13 +2,13 @@
 	path = WebServices-Frontend
 	url = https://github.com/xNeroXx/WebServices-Frontend.git
 [submodule "music-db"]
-	path = music-db
+	path = database/music-db
 	url = https://github.com/selinaweh/music-db.git
 [submodule "music-app"]
-	path = music-app
+	path = backend/music-app
 	url = https://github.com/HaagChristian/musicApp.git
 [submodule "web-services-user-db"]
-	path = web-services-user-db
+	path = database/web-services-user-db
 	url = https://github.com/HaagChristian/web-services-user-db.git
 [submodule "backend/id3-service"]
 	path = backend/id3-service
