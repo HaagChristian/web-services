@@ -10,3 +10,6 @@
 [submodule "backend/id3-service"]
 	path = backend/id3-service
 	url = https://github.com/HaagChristian/id3-service.git
+[submodule "backend/music-app"]
+	path = backend/music-app
+	url = https://github.com/HaagChristian/music-app.git
