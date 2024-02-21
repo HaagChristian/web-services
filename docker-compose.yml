@@ -3,26 +3,26 @@ services:
   mysql-user-db:
     container_name: mysql-user-db
     platform: linux/x86_64
-    build: ./web-services-user-db/database/mysql/
+    build: ./database/web-services-user-db/database/mysql/
     ports:
       - "3306:3306"
     volumes:
-      - ./web-services-user-db/database/mysql/db:/docker-entrypoint-initdb.d
-      - ./web-services-user-db/database/mysql/conf.d:/etc/mysql/conf.d
+      - ./database/web-services-user-db/database/mysql/db:/docker-entrypoint-initdb.d
+      - ./database/web-services-user-db/database/mysql/conf.d:/etc/mysql/conf.d
     env_file:
-      - web-services-user-db/database/mysql/local.env
+      - database/web-services-user-db/database/mysql/local.env
     tty: true
   mysql-music-db:
     container_name: mysql-music-db
     platform: linux/x86_64
-    build: ./music-db/database/mysql/
+    build: ./database/music-db/database/mysql/
     ports:
       - "3308:3306"
     volumes:
-      - ./music-db/database/mysql/db:/docker-entrypoint-initdb.d
-      - ./music-db/database/mysql/conf.d:/etc/mysql/conf.d
+      - ./database/music-db/database/mysql/db:/docker-entrypoint-initdb.d
+      - ./database/music-db/database/mysql/conf.d:/etc/mysql/conf.d
     env_file:
-      - music-db/database/mysql/local.env
+      - database/music-db/database/mysql/local.env
     tty: true
   music-app:
     depends_on:
@@ -31,13 +31,13 @@ services:
     container_name: fast_api
     platform: linux/x86_64
     build:
-      context: ./musicApp
+      context: ./backend/musicApp
       dockerfile: Dockerfile
     restart: unless-stopped
     tty: true
     volumes:
-      - ./musicApp:/app
+      - ./backend/musicApp:/app
     ports:
       - "8000:8000"
     env_file:
-      - ./musicApp/local.env
+      - ./backend/musicApp/local.env
