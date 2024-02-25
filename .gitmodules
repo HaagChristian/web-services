@@ -13,3 +13,6 @@
 [submodule "database/web-services-user-db"]
 	path = database/web-services-user-db
 	url = https://github.com/HaagChristian/web-services-user-db.git
+[submodule "backend/encoder-service"]
+	path = backend/encoder-service
+	url = https://github.com/selinaweh/encoder-service.git
