@@ -12,6 +12,11 @@ services:
     env_file:
       - database/web-services-user-db/database/mysql/local.env
     tty: true
+    healthcheck:
+      test: [ "CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-pexample" ]
+      interval: 15s
+      retries: 5
+
   mysql-music-db:
     container_name: mysql-music-db
     platform: linux/x86_64
@@ -24,10 +29,30 @@ services:
     env_file:
       - database/music-db/database/mysql/local.env
     tty: true
+    healthcheck:
+      test: [ "CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-pexample" ]
+      interval: 15s
+      retries: 5
+
+  id3-app:
+    container_name: fast_api_id3
+    platform: linux/x86_64
+    build:
+      context: ./backend/id3-service
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    tty: true
+    volumes:
+      - ./backend/id3-service:/app
+    ports:
+      - "8001:8000"
+
   music-app:
     depends_on:
-      - mysql-user-db
-      - mysql-music-db
+      mysql-user-db:
+        condition: service_healthy
+      mysql-music-db:
+        condition: service_healthy
     container_name: fast_api
     platform: linux/x86_64
     build:
@@ -41,21 +66,7 @@ services:
       - "8000:8000"
     env_file:
       - ./backend/music-app/local.env
-  id3-app:
-    depends_on:
-      - mysql-user-db
-      - mysql-music-db
-    container_name: fast_api_id3
-    platform: linux/x86_64
-    build:
-      context: ./backend/id3-service
-      dockerfile: Dockerfile
-    restart: unless-stopped
-    tty: true
-    volumes:
-      - ./backend/id3-service:/app
-    ports:
-      - "8001:8000"
+      
   encoder-app:
     depends_on:
       - mysql-user-db
