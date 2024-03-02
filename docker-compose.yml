@@ -22,7 +22,7 @@ services:
     platform: linux/x86_64
     build: ./database/music-db/database/mysql/
     ports:
-      - "3308:3308"
+      - "3308:3306"
     volumes:
       - ./database/music-db/database/mysql/db:/docker-entrypoint-initdb.d
       - ./database/music-db/database/mysql/conf.d:/etc/mysql/conf.d
