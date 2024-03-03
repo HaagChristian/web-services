@@ -42,5 +42,5 @@ For easier development and running the services outside of docker, the RUN_IN_DO
 To run the services inside of the docker network, the flag is set to True. 
 
 ## URL´s 
-Music App Backend: http://localhost:8000/api
-Music App Frontend: http://localhost:4200
+- Music App Backend: http://localhost:8000/api
+- Music App Frontend: http://localhost:4200
