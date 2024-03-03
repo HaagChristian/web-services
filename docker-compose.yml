@@ -82,3 +82,15 @@ services:
       - ./backend/encoder-service:/app
     ports:
       - "8002:8002"
+      
+  frontend:
+    container_name: music-app-frontend
+    platform: linux/x86_64
+    build:
+      context: ./WebServices-Frontend/
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    volumes:
+      - ./WebServices-Frontend:/app
+    ports:
+      - "4200:4200"
