@@ -1,14 +1,37 @@
-# fastapi-mysql-docker
+# Music Service 
 
-## Update submodules
-```git
-git submodule foreach git pull origin main
-git add .
-git commit -m "Updated submodules"
-git push origin main
-```
+## Description
+
+This project contains 
+
+- Music service
+- Encoder service
+- ID3 service
+- Music frontend
+- User database
+- Music database
+
+To use all features which are provided by the application, you need to signup and signin first. Afterwards you can use the services by uploading music mp3 files. 
+After adding some files, it is possible to search, edit metadata, convert mp3 files to wav, ogg and flac and listen to a selected song. 
+
+
+## Installation guide 
+
+To start the project use 
 
 ```sh
 docker-compose up
 ```
 
+The Python module pydub is dependent on the ffmpeg package. When using the encoder service within Docker, this package is loaded automatically. 
+As the package in turn requires various dependencies, the build of the container can take a few minutes.
+
+### Installation error
+If an unexpected error should occur during docker compose up, just restart the up command. 
+
+
+## Environment variables
+
+All environment variables are stored in the local.env files in the corressponding service. 
+For easier development and running the services outside of docker, the RUN_IN_DOCKER_COMPOSE flag is used. 
+To run the services inside of the docker network, the flag is set to True. 
