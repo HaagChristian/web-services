@@ -44,3 +44,14 @@ To run the services inside of the docker network, the flag is set to True.
 ## URL´s 
 - Music App Backend: http://localhost:8000/api
 - Music App Frontend: http://localhost:4200
+
+
+## Team 02
+
+### Backend
+Christian Haag (4541127)
+Selina Weh (8862069)
+
+### Frontend
+Noura Bouhra (2048467)
+Leon Kleinhans ()
