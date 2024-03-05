@@ -29,7 +29,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"email\": \"user@example.com\",\n  \"password\": \"Password\",\n  \"first_name\": \"string\",\n  \"last_name\": \"string\",\n  \"username\": \"string\",\n  \"address\": {\n    \"street\": \"string\",\n    \"house_number\": 0,\n    \"postal_code\": 0,\n    \"city\": \"string\",\n    \"country\": \"string\",\n    \"state\": \"string\"\n  }\n}",
+									"raw": "{\n  \"email\": \"user@example.com\",\n  \"password\": \"Password\",\n  \"first_name\": \"string\",\n  \"last_name\": \"string\",\n  \"username\": \"string\",\n  \"address\": {\n    \"street\": \"string\",\n    \"house_number\": 1,\n    \"postal_code\": \"1\",\n    \"city\": \"string\",\n    \"country\": \"string\",\n    \"state\": \"string\"\n  }\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -157,7 +157,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"email\": \"user1@example.com\",\n  \"password\": \"Password\"\n}",
+									"raw": "{\n  \"email\": \"user@example.com\",\n  \"password\": \"Password\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
