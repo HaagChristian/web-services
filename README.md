@@ -14,12 +14,6 @@ This project contains
 To use all features which are provided by the application, you need to signup and signin first. Afterwards you can use the services by uploading music mp3 files. 
 After adding some files, it is possible to search, edit metadata, convert mp3 files to wav, ogg and flac and listen to a selected song. 
 
-
-## Requirements
-
-As the frontend is developed with Angular 17, please ensure that your environment has Node.js version 18.13.0 or newer, along with TypeScript version 4.9.3 or newer installed.
-Dependencies within the npm modules are automatically installed by following the installation guide.
-
 ## Installation guide 
 
 To start the project use 
