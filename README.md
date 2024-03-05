@@ -54,4 +54,4 @@ Selina Weh (8862069)
 
 ### Frontend
 Noura Bouhra (2048467)
-Leon Kleinhans ()
+Leon Kleinhans (7350736)
